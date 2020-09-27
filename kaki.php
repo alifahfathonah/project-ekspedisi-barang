@@ -7,6 +7,15 @@
 <script src="https://unpkg.com/scrollreveal"></script>
 
 <script>
+   function lihatPassword() {
+      var temp = document.getElementById("password");
+      if (temp.type === "password") {
+         temp.type = "text";
+      } else {
+         temp.type = "password";
+      }
+   }
+
    // banner
    ScrollReveal().reveal('.a-banner', {
       distance: '100px',

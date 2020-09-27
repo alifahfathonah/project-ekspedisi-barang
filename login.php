@@ -16,7 +16,14 @@
                      <input class="form-control" name="email" type="text" placeholder="Email" required>
                   </p>
                   <p>
-                     <input class="form-control" name="password" type="text" placeholder="Password" required>
+                     <div>
+                        <input class="form-control" name="password" id="password" type="password" placeholder="Password" required>
+                        <a href="#" id="lihat" class="float-right" style="position:absolute; right:62px; top:110px" onclick="lihatPassword()">Lihat Password</a>
+                     </div>
+                  </p>
+                  <p>
+                     <input name="rememberme" id="rememberme" type="checkbox">
+                     <label for="rememberme">Ingat Saya</label>
                   </p>
                   <div class="row text-center">
                      <div class="col-lg-12">

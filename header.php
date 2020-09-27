@@ -17,6 +17,8 @@
                       <?php
                         if (!isset($_SESSION['IdUser'])) {
                            echo '<a class="nav-link" href="?page=login">Login</a>';
+                        } else {
+                           echo '<a class="nav-link" href="logout.php">Logout</a>';
                         }
                         ?>
                    </div>

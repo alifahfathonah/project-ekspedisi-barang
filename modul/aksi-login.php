@@ -11,6 +11,10 @@ if (!empty($email) or !empty($password)) {
       if ($password == $dataUsers['password']) {
          if ($dataUsers['status'] == 'Aktif') {
             notif("Berhasil Login", "success");
+            if ($_POST['rememberme'] == 'on') {
+               setcookie('login', $dataUsers['id_user'], time() + 120);
+            }
+
             $_SESSION['IdUser']   = $dataUsers['id_user'];
             $_SESSION['Email']    = $dataUsers['email'];
             $_SESSION['Username'] = $dataUsers['username'];
