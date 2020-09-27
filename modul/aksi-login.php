@@ -10,22 +10,23 @@ if (!empty($email) or !empty($password)) {
    if ($dataUsers !== null) {
       if ($password == $dataUsers['password']) {
          if ($dataUsers['status'] == 'Aktif') {
-            echo "<script>alert('Berhasil Login')</script>";
+            notif("Berhasil Login", "success");
+            header("Location: ?page=login");
          } else {
-            echo "<script>alert('Akun tidak aktif. Silakan hubungi admin')</script>";
+            notif("Akun tidak aktif. Silakan hubungi admin", "warning");
+            header("Location: ?page=login");
          }
       } else {
-         echo "<script>alert('Password tidak valid')</script>";
+         notif("Password tidak valid", "danger");
+         header("Location: ?page=login");
       }
    } else {
-      echo "<script>alert('Email tidak valid')</script>";
+      notif("Email tidak valid", "danger");
+      header("Location: ?page=login");
    }
 } else {
-   echo "<script>alert('Email atau password harap diisi terlebih dahulu')</script>";
+   notif("Email tidak valid", "danger");
 }
-
-
-
 
 
 // $cekEmail    = ($email    == 'admin@gmail.com'); //HASILNYA TRUE / FALSE

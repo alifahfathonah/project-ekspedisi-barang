@@ -1,5 +1,7 @@
 <?php
+session_start();
 require 'koneksi/koneksi.php';
+require 'koneksi/function.php';
 ?>
 <!doctype html>
 <html lang="en">

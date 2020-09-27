@@ -9,6 +9,12 @@
       </div>
       <div class="row justify-content-center">
          <div class="col-lg-6 text-center ">
+            <?php
+            if (isset($_SESSION['notif'])) {
+               echo $_SESSION['notif'];
+               unset($_SESSION['notif']);
+            }
+            ?>
             <div class="halaman-ulasan-rating">
                <form action="?page=aksi-login" method="POST">
                   <p>
