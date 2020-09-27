@@ -9,3 +9,11 @@ function notif($pesan, $jenisPesan)
       $_SESSION['notif'] = "<div class='alert alert-danger'>$pesan</div>";
    }
 }
+
+function tampilNotif()
+{
+   if (isset($_SESSION['notif'])) {
+      echo $_SESSION['notif'];
+      unset($_SESSION['notif']);
+   }
+}

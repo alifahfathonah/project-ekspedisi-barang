@@ -13,7 +13,12 @@
                       <a class="nav-link active" href="?page=home">Beranda <span class="sr-only">(current)</span></a>
                       <a class="nav-link" href="?page=layanan-kami">Layanan Kami</a>
                       <a class="nav-link" href="?page=contact">Contact Us</a>
-                      <a class="nav-link" href="?page=login">Login</a>
+                      <!-- //KONDISI SEBELUM DAN SESUDAH LOGIN -->
+                      <?php
+                        if (!isset($_SESSION['IdUser'])) {
+                           echo '<a class="nav-link" href="?page=login">Login</a>';
+                        }
+                        ?>
                    </div>
                 </div>
              </div>

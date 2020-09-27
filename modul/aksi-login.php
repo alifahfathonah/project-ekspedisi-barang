@@ -11,7 +11,14 @@ if (!empty($email) or !empty($password)) {
       if ($password == $dataUsers['password']) {
          if ($dataUsers['status'] == 'Aktif') {
             notif("Berhasil Login", "success");
-            header("Location: ?page=login");
+            $_SESSION['IdUser']   = $dataUsers['id_user'];
+            $_SESSION['Email']    = $dataUsers['email'];
+            $_SESSION['Username'] = $dataUsers['username'];
+            $_SESSION['Status']   = $dataUsers['status'];
+            $_SESSION['Level']    = $dataUsers['level'];
+            $_SESSION['LoginAt']  = $dataUsers['login_at'];
+
+            header("Location: index.php");
          } else {
             notif("Akun tidak aktif. Silakan hubungi admin", "warning");
             header("Location: ?page=login");
