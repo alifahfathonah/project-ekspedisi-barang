@@ -13,7 +13,7 @@ ob_start();
 
 <body>
    <?php include 'header.php'; ?>
-   <div class="row">
+   <div class="row container-fluid">
       <div class="col-md-3">
          <?php include 'menu.php'; ?>
       </div>
