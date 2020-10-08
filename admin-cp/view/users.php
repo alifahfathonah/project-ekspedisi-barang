@@ -17,23 +17,21 @@
    </thead>
    <tbody>
       <?php
-      $sql = "SELECT * FROM users inner join profil on users.id_user=profil.id_user";
-      $query = mysqli_query($konek, $sql);
+      $users = getUsers();
       $no = 1;
-      while ($data = mysqli_fetch_assoc($query)) : ?>
-         <tr>
-            <th><?= $no++ ?></th>
-            <td><?= $data['username'] ?></td>
-            <td><?= $data['nama_depan'] . ' ' . $data['nama_belakang'] ?></td>
-            <td><?= $data['jk'] ?></td>
-            <td><?= $data['level'] ?></td>
-            <td><?= $data['status'] ?></td>
-            <td><?= $data['login_at'] ?></td>
-            <td>
-               <a href="?page=upd-users&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-info">Edit</a>
-               <a href="?page=act-users&aksi=delete&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ?')">Delete</a>
-            </td>
+      foreach ($users as $data) : ?>
+         <th><?= $no++ ?></th>
+         <td><?= $data['username'] ?></td>
+         <td><?= $data['nama_depan'] . ' ' . $data['nama_belakang'] ?></td>
+         <td><?= $data['jk'] ?></td>
+         <td><?= $data['level'] ?></td>
+         <td><?= $data['status'] ?></td>
+         <td><?= $data['login_at'] ?></td>
+         <td>
+            <a href="?page=upd-users&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-info">Edit</a>
+            <a href="?page=act-users&aksi=delete&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ?')">Delete</a>
+         </td>
          </tr>
-      <?php endwhile ?>
+      <?php endforeach ?>
    </tbody>
 </table>

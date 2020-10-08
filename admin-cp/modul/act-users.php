@@ -9,7 +9,8 @@ if (isset($_POST['save-users'])) {
    $level        = $_POST['level'];
 
    //ade123@gmail@com
-   $getUsername = explode('@', $email); //MENGAMBIL USERNAME DARI EMAIl
+   $getUsername = explode('@', $email);
+   // MENGAMBIL USERNAME DARI EMAIl
    // 0 -> ade123
    // 1-> gmail.com
    // 2-> com
