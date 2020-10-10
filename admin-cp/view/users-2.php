@@ -1,6 +1,7 @@
 <h1>Data User 2
-   <a href="#" class="btn btn-outline-info float-right">Tambah User 2</a>
+   <a href="?page=add-users-2" class="btn btn-outline-info float-right">Tambah User 2</a>
 </h1>
+<?php tampilNotif() ?>
 <table class="table table-striped">
    <thead>
       <tr>
@@ -27,7 +28,11 @@
             <td><?= $data['level'] ?></td>
             <td><?= $data['status'] ?></td>
             <td><?= $data['login_at'] ?></td>
-            <td></td>
+            <td>
+               <a href="?page=upd-users&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-info">Edit</a>
+
+               <a href="?page=act-users-2&delete=one&id=<?= $data['id_user'] ?>" onclick="return confirm('yakin ingin menghapus data ?')" class="btn btn-sm btn-danger">Delete</a>
+            </td>
          </tr>
       <?php endforeach ?>
    </tbody>

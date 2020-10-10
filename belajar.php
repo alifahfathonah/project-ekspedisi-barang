@@ -13,11 +13,11 @@ $data = ["budi", 23, 3.4, true]; //ARRAY NUMERIC
 echo $data[2];
 
 $data2 = [
-   "username" => "budi",
-   "nama"    => "budi",
-   "umur"    => 23,
-   "ipk"     => 3.4,
-   "pilihan" => true
+         "username" => "budi",
+         "nama"    => "budi",
+         "umur"    => 23,
+         "ipk"     => 3.4,
+         "pilihan" => true
 ]; //ARRAY ASSOCIATIVE
 
 echo $data2['username '];

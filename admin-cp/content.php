@@ -19,11 +19,18 @@ switch ($halaman) {
    case 'upd-users':
       include 'view/upd-form/upd-users.php';
       break;
+   case 'add-users-2':
+      include 'view/add-form/add-users-2.php';
+      break;
 
 
       //AKSI FORM
    case 'act-users':
       include 'modul/act-users.php';
+      break;
+
+   case 'act-users-2':
+      include 'modul/act-users-2.php';
       break;
 
    default:

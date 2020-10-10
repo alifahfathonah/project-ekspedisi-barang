@@ -17,9 +17,8 @@
    </thead>
    <tbody>
       <?php
-      $users = getUsers();
       $no = 1;
-      foreach ($users as $data) : ?>
+      foreach (getUsers() as $data) : ?>
          <th><?= $no++ ?></th>
          <td><?= $data['username'] ?></td>
          <td><?= $data['nama_depan'] . ' ' . $data['nama_belakang'] ?></td>
