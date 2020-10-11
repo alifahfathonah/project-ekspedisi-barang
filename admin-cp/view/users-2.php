@@ -29,7 +29,7 @@
             <td><?= $data['status'] ?></td>
             <td><?= $data['login_at'] ?></td>
             <td>
-               <a href="?page=upd-users&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-info">Edit</a>
+               <a href="?page=upd-users-2&id=<?= $data['id_user'] ?>" class="btn btn-sm btn-info">Edit</a>
 
                <a href="?page=act-users-2&delete=one&id=<?= $data['id_user'] ?>" onclick="return confirm('yakin ingin menghapus data ?')" class="btn btn-sm btn-danger">Delete</a>
             </td>

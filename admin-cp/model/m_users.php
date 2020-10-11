@@ -11,6 +11,15 @@ function getUsers()
    return $x;
 }
 
+function getUsersById($id)
+{
+   global $konek;
+   $sql = "SELECT * FROM `users` inner join profil on users.id_user=profil.id_user WHERE users.id_user='$id'";
+   $query = mysqli_query($konek, $sql);
+   $data = mysqli_fetch_assoc($query);
+   return $data;
+}
+
 
 function insertUsers($data)
 {
@@ -30,6 +39,25 @@ function insertUsers($data)
    }
 }
 
+function updateusers($data)
+{
+   global $konek;
+   if ($data['password'] == null) {
+      $sqlUsers = "UPDATE users SET email='$data[email]',username='$data[username]',status='$data[status]',level='$data[level]',updated_at=CURRENT_TIMESTAMP() WHERE id_user='$data[iduser]'";
+   } else {
+      $sqlUsers = "UPDATE users SET email='$data[email]',pasword='$data[pasword]',namadepan='$data[namadepan]',namaBelakang='$data[namaBelakang]',status='$data[status]',updated_at=CURRENT_TIMESTAMP() WHERE id_user='$data[idusers]'";
+   }
+
+   $updateUsers = mysqli_query($konek, $sqlUsers) or die(mysqli_errno($konek));
+
+   if ($updateUsers) {
+      $sqlProfil = "UPDATE profil SET nama_depan='$data[namaDepan]',nama_belakang='$data[namaBelakang]' WHERE id_user='$data[iduser]'";
+
+      $updateProfil = mysqli_query($konek, $sqlProfil)
+         or die(mysqli_errno($konek));
+      return $updateProfil;
+   }
+}
 
 function deleteUsers($id)
 {

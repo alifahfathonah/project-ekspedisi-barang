@@ -18,6 +18,27 @@ if (isset($_POST['save-users'])) {
    }
 }
 
+if (isset($_POST['update-users'])) {
+   $pecahEmail = explode('@', $_POST['email']);
+   $data = [
+      'iduser'       => $_POST['iduser'],
+      'username'     => $pecahEmail[0],
+      'namaDepan'    => $_POST['namaDepan'],
+      'namaBelakang' => $_POST['namaBelakang'],
+      'password'     => $_POST['password'],
+      'email'        => $_POST['email'],
+      'level'        => $_POST['level'],
+      'status'       => $_POST['status'] == 'on' ? 'Aktif' : 'Tidak Aktif'
+   ];
+
+   $updateData = updateUsers($data);
+   if ($updateData) {
+      notif("Berhasil mengubah data users", 'success');
+      header("Location: ?page=users-2");
+   }
+}
+
+
 if (isset($_GET['delete'])) {
    if ($_GET['delete'] == 'one') {
       $idUser = $_GET['id'];
@@ -27,5 +48,25 @@ if (isset($_GET['delete'])) {
          notif("Berhasil Menghapus data users", 'success');
          header("Location: ?page=users-2");
       }
+   }
+}
+
+
+if (isset($_POST['update-layanan'])) {
+   $pecahEmail = explode('@', $_POST['email']);
+   $data = [
+      'idlayanan'       => $_POST['idlayanan'],
+      'username'     => $pecahEmail[0],
+      'layanan'    => $_POST['layanan'],
+      'namaBelakang' => $_POST['keterangan'],
+      'icon'     => $_POST['icon'],
+
+      'status'       => $_POST['status'] == 'on' ? 'Aktif' : 'Tidak Aktif'
+   ];
+
+   $updateData = updateUsers($data);
+   if ($updateData) {
+      notif("Berhasil mengubah data users", 'success');
+      header("Location: ?page=users-2");
    }
 }
