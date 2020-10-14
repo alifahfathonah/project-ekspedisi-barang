@@ -50,23 +50,3 @@ if (isset($_GET['delete'])) {
       }
    }
 }
-
-
-if (isset($_POST['update-layanan'])) {
-   $pecahEmail = explode('@', $_POST['email']);
-   $data = [
-      'idlayanan'       => $_POST['idlayanan'],
-      'username'     => $pecahEmail[0],
-      'layanan'    => $_POST['layanan'],
-      'namaBelakang' => $_POST['keterangan'],
-      'icon'     => $_POST['icon'],
-
-      'status'       => $_POST['status'] == 'on' ? 'Aktif' : 'Tidak Aktif'
-   ];
-
-   $updateData = updateUsers($data);
-   if ($updateData) {
-      notif("Berhasil mengubah data users", 'success');
-      header("Location: ?page=users-2");
-   }
-}

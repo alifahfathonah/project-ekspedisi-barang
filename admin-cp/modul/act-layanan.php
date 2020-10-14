@@ -20,12 +20,12 @@ if (isset($_POST['update-layanan'])) {
       'layanan'    => $_POST['layanan'],
       'keterangan' => $_POST['keterangan'],
       'icon'       => $_POST['icon'],
-      'status'     => $_POST['status']
+      'status'     => $_POST['status'] == 'on' ? 'Y' : 'N'
    ];
 
-   $insertData = updateLayanan($data); //benar true / false salah
-   if ($insertData) {
-      notif("Berhasil Menambahkan data layanan", 'success');
+   $updateData = updatelayanan($data); //benar true / false salah
+   if ($updateData) {
+      notif("Berhasil mengubah data layanan", 'success');
       header("Location: ?page=datalayanan");
    }
 }

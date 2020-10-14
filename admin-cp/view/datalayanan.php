@@ -1,7 +1,7 @@
 <h1>Data Layanan
    <a href="?page=add-layanan" class="btn btn-outline-info float-right">Tambah Layanan</a>
 </h1>
-<?= tampilNotif() ?>
+<?php tampilNotif() ?>
 <table class="table table-striped">
    <thead>
       <tr>
@@ -15,16 +15,18 @@
    </thead>
    <tbody>
       <?php
+      $layanan = getLayanan();
       $no = 1;
-      foreach (getLayananById() as $data) : ?>
+      foreach ($layanan as $data) : ?>
          <th><?= $no++ ?></th>
          <td><?= $data['layanan'] ?></td>
          <td><?= $data['keterangan'] ?></td>
          <td><?= $data['icon'] ?></td>
          <td><?= $data['status'] ?></td>
          <td>
-            <a href="?page=upd-users&id=<?= $data['id_layanan'] ?>" class="btn btn-sm btn-info">Edit</a>
-            <a href="?page=act-users&aksi=delete&id=<?= $data['id_layanan'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ?')">Delete</a>
+            <a href="?page=upd-layanan&id=<?= $data['id_layanan'] ?>" class="btn btn-sm btn-info">Edit</a>
+
+            <a href="?page=act-layanan&delete=one&id=<?= $data['id_layanan'] ?>" onclick="return confirm('yakin ingin menghapus data ?')" class="btn btn-sm btn-danger">Delete</a>
          </td>
          </tr>
       <?php endforeach ?>
