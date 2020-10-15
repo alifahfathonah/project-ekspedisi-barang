@@ -1,14 +1,8 @@
 <?php
 $server = 'localhost';
 $user   = 'root';
-<<<<<<< HEAD
 $pass   = 'zxcv';
 $db     = 'db_ekpedisif4';
-=======
-$pass   = '';
-$db     = 'db_ekspedisif4';
->>>>>>> 783ffd254933175e781a1d8f418bc244dd3cf4bd
-
 $konek = mysqli_connect($server, $user, $pass, $db) or die("Terjadi kesalahan");
 
 // CEK COOKIES

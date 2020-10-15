@@ -31,6 +31,12 @@ switch ($halaman) {
    case 'barang':
       include 'view/barang.php';
       break;
+   case 'add-barang':
+      include 'view/add-form/add-barang.php';
+      break;
+   case 'upd-barang':
+      include 'view/upd-form/upd-barang.php';
+      break;
 
 
       //AKSI FORM
