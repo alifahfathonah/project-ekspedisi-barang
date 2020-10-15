@@ -28,6 +28,10 @@ switch ($halaman) {
       include 'view/upd-form/upd-layanan.php';
       break;
 
+   case 'barang':
+      include 'view/barang.php';
+      break;
+
 
       //AKSI FORM
    case 'act-users':
