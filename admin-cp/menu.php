@@ -11,6 +11,5 @@
 
    <a href="?page=barang" class="list-group-item list-group-item-action <?= isset($_GET['page']) ? $_GET['page'] == 'barang' ? 'active' : '' : '' ?>">Barang</a>
 
-
    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Tracking</a>
 </div>
