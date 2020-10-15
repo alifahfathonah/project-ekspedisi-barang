@@ -1,5 +1,4 @@
-<h3>Data Barang berbeda
-</h3>
+<h3>Data Barang</h3>
 
 <table class="table">
     <thead>
