@@ -24,10 +24,14 @@ switch ($halaman) {
       include 'view/add-form/add-layanan.php';
       break;
 
-   case 'upd-layanan':
-      include 'view/upd-form/upd-layanan.php';
-      break;
+      case 'upd-layanan':
+         include 'view/upd-form/upd-layanan.php';
+         break;
 
+         case 'barang':
+         include 'view/barang.php';
+         break;
+      
 
       //AKSI FORM
    case 'act-users':
