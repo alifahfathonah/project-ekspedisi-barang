@@ -2,8 +2,7 @@
 $server = 'localhost';
 $user   = 'root';
 $pass   = '';
-$db     = 'db_ekspedisif4';
-
+$db     = 'db_ekpedisif4';
 $konek = mysqli_connect($server, $user, $pass, $db) or die("Terjadi kesalahan");
 
 // CEK COOKIES
