@@ -4,6 +4,7 @@ require '../koneksi/koneksi.php';
 require '../koneksi/function.php';
 require 'model/m_users.php';
 require 'model/m_layanan.php';
+require 'model/m_barang.php';
 ob_start();
 ?>
 <!doctype html>

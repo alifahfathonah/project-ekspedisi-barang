@@ -52,6 +52,10 @@ switch ($halaman) {
       include 'modul/act-layanan.php';
       break;
 
+   case 'act-barang':
+      include 'modul/act-barang.php';
+      break;
+
    default:
       echo "HALAMAN TIDAK DITEMUKAN";
       break;
