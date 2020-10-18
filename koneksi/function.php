@@ -17,3 +17,25 @@ function tampilNotif()
       unset($_SESSION['notif']);
    }
 }
+
+
+function uploadFile($data)
+{
+   if ($data['namaFoto'] <> null) {
+      if (in_array($data['ekstensiFile'], $data['ekstensiBoleh'])) {
+         if ($data['ukuranFile'] < $data['ukuranBoleh']) {
+            $upload = move_uploaded_file($data['fileSementara'], $data['folderUpload'] . '' . $data['namaFilePasDiUpload']);
+
+            if ($upload) {
+               return 'success';
+            }
+         } else {
+            return "notAllowedMaxFiles";
+         }
+      } else {
+         return "notAllowedExtention";
+      }
+   } else {
+      return "noFileUpload";
+   }
+}
