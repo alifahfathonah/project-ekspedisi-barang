@@ -3,7 +3,7 @@ $data = getLayananById($_GET['id']);
 ?>
 
 <h3>Ubah Data Layanan</h3>
-<form action="?page=act-layanan" method="POST">
+<form action="?page=act-layanan" method="POST" enctype="multipart/form-data">
    <input type="text" class="form-control" name="idlayanan" value="<?= $data['id_layanan'] ?>" hidden>
    <div class="row">
       <div class="col">
@@ -27,7 +27,7 @@ $data = getLayananById($_GET['id']);
       <div class="col-lg-6">
          <div class="form-group">
             <label for="icon">Icon</label>
-            <input type="text" class="form-control" id="icon" name="icon" value="<?= $data['icon'] ?>">
+            <input type="file" class="form-control" id="icon" name="icon">
          </div>
       </div>
       <div class="col-lg-6">
@@ -37,6 +37,15 @@ $data = getLayananById($_GET['id']);
                <input type="checkbox" class="form-check-input" id="status" name="status" <?= $data['status'] == 'Y' ? 'checked' : '' ?>>
                <label class="form-check-label" for="status">Y</label>
             </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col text-center">
+         <div class="form-group">
+            <label for="foto">Foto</label>
+            <img src="../images/layanan/<?= $data['icon'] ?>" alt="" width="35%">
          </div>
       </div>
    </div>

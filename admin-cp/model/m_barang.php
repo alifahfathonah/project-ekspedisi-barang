@@ -27,6 +27,14 @@ function insertBarang($data)
     return $query;
 }
 
+function updateBarang($data)
+{
+    global $konek;
+    $sql = "UPDATE tb_barang SET nama_barang='$data[barang]', jenis_barang='$data[jenis]', berat='$data[berat]', foto='$data[foto]' WHERE id_barang='$data[idBarang]'";
+    $query = mysqli_query($konek, $sql) or die(mysqli_errno($konek));
+    return $query;
+}
+
 function deleteBarang($id)
 {
     global $konek;
