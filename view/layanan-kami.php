@@ -77,19 +77,23 @@
 <section id="pilihan-layanan">
     <div class="container">
         <div class="row text-center justify-content-center a-banner">
-            <div class="col-lg-4 bg-layanan">
-                <img src="./Assets/icon/car-1.png" alt="">
-                <h1>YES</h1>
-                <p>YES adalah layanan dengan waktu penyampaian di tujuan keesokan hari (termasuk Minggu dan hari libur nasional)</p>
-                <a href="./Yes.html"><button class="btn btn-warning">Cek Biaya</button></a>
-            </div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-4 bg-layanan">
-                <img src="./Assets/icon/packet.png" alt="">
-                <h1>REG</h1>
-                <p>REGULER adalah layanan pengiriman ke seluruh wilayah Indonesia, waktu penyampaian kiriman 1-7 hari kerja,</p>
-                <a href="./Reg.html"><button class="btn btn-warning">Cek Biaya</button></a>
-            </div>
+            <?php
+            $layanan = getLayanan();
+            foreach ($layanan as $data) : ?>
+                <div class="col-lg-4 bg-layanan">
+                    <img src="./images/layanan/<?= $data['icon'] ?>" alt="">
+                    <h1><?= $data['layanan'] ?></h1>
+                    <p><?= $data['keterangan'] ?></p>
+                    <a href="./Yes.html"><button class="btn btn-warning">Cek Biaya</button></a>
+                </div>
+                <div class="col-lg-1"></div>
+                <!-- <div class="col-lg-4 bg-layanan">
+                    <img src="./Assets/icon/packet.png" alt="">
+                    <h1>REG</h1>
+                    <p>REGULER adalah layanan pengiriman ke seluruh wilayah Indonesia, waktu penyampaian kiriman 1-7 hari kerja,</p>
+                    <a href="./Reg.html"><button class="btn btn-warning">Cek Biaya</button></a>
+                </div> -->
+            <?php endforeach ?>
         </div>
     </div>
 </section>
