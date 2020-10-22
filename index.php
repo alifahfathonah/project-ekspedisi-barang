@@ -2,6 +2,7 @@
 session_start();
 require 'koneksi/koneksi.php';
 require 'koneksi/function.php';
+require 'admin-cp/model/m_layanan.php';
 ?>
 <!doctype html>
 <html lang="en">
