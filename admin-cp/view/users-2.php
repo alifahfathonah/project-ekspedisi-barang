@@ -2,7 +2,7 @@
    <a href="?page=add-users-2" class="btn btn-outline-info float-right">Tambah User 2</a>
 </h1>
 <?php tampilNotif() ?>
-<table class="table table-striped">
+<table class="table table-striped" id="tableSaya">
    <thead>
       <tr>
          <th scope="col">#</th>

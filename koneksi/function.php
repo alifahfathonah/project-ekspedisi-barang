@@ -18,6 +18,17 @@ function tampilNotif()
    }
 }
 
+function restrictedPageAdmin()
+{
+   if (empty($_SESSION['Level'])) {
+      header("Location: ../index.php");
+   } else {
+      if ($_SESSION['Level'] == 'customer') {
+         header("Location: ../index.php");
+      }
+   }
+}
+
 
 function uploadFile($data)
 {

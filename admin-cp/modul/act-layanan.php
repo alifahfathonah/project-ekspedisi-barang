@@ -3,6 +3,7 @@ if (isset($_POST['save-layanan'])) {
    $data = [
       'layanan'    => $_POST['layanan'],
       'keterangan' => $_POST['keterangan'],
+      'link' => $_POST['link'],
       'status'       => $_POST['status'] == 'on' ? 'Y' : 'N'
    ];
 
@@ -62,6 +63,7 @@ if (isset($_POST['update-layanan'])) {
       'idlayanan'  => $_POST['idlayanan'],
       'layanan'    => $_POST['layanan'],
       'keterangan' => $_POST['keterangan'],
+      'link' => $_POST['link'],
       'status'     => $_POST['status'] == 'on' ? 'Y' : 'N'
    ];
 

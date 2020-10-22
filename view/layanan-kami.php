@@ -84,7 +84,7 @@
                     <img src="./images/layanan/<?= $data['icon'] ?>" alt="">
                     <h1><?= $data['layanan'] ?></h1>
                     <p><?= $data['keterangan'] ?></p>
-                    <a href="./Yes.html"><button class="btn btn-warning">Cek Biaya</button></a>
+                    <a href="<?= $data['link'] ?>"><button class="btn btn-warning">Cek Biaya</button></a>
                 </div>
                 <div class="col-lg-1"></div>
                 <!-- <div class="col-lg-4 bg-layanan">

@@ -2,7 +2,7 @@
    <a href="?page=add-layanan" class="btn btn-outline-info float-right">Tambah Layanan</a>
 </h1>
 <?php tampilNotif() ?>
-<table class="table table-striped">
+<table class="table table-striped" id="tableSaya">
    <thead>
       <tr>
          <th scope="col">#</th>

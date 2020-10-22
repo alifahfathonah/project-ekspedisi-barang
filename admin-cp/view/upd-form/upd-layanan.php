@@ -12,6 +12,14 @@ $data = getLayananById($_GET['id']);
             <input type="text" class="form-control" id="layanan" name="layanan" value="<?= $data['layanan'] ?>">
          </div>
       </div>
+      <div class="col">
+         <div class="col">
+            <div class="form-group">
+               <label for="link">Link</label>
+               <input type="text" class="form-control" id="link" name="link" value="<?= $data['link'] ?>">
+            </div>
+         </div>
+      </div>
    </div>
 
    <div class="row">

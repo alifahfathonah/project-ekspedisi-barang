@@ -5,7 +5,8 @@
    </button>
    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-         <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+         <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+         <a class="nav-link" href="?page=logout">Logout <span class="sr-only">(current)</span></a>
       </div>
    </div>
 </nav>

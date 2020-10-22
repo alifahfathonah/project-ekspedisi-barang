@@ -1,3 +1,8 @@
+<?php
+if (isset($_SESSION['Level'])) {
+   header("Location: index.php");
+}
+?>
 <!-- Judul Halaman ulasan & rating -->
 <section id="judul-ulasan-rating">
    <div class="container">

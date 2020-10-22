@@ -23,7 +23,7 @@ function getLayananById($id)
 function insertLayanan($data)
 {
    global $konek;
-   $sqllay = "INSERT INTO `tb_layanan`(`layanan`, `keterangan`, `icon`, `status`) VALUES ('$data[layanan]', '$data[keterangan]', '$data[icon]', '$data[status]')";
+   $sqllay = "INSERT INTO `tb_layanan`(`layanan`, `keterangan`,`link`, `icon`, `status`) VALUES ('$data[layanan]', '$data[keterangan]', '$data[link]', '$data[icon]', '$data[status]')";
    $insertlay = mysqli_query($konek, $sqllay);
    return $insertlay;
 }
@@ -39,7 +39,13 @@ function deleteLayanan($id)
 function updatelayanan($data)
 {
    global $konek;
-   $sqllayanan = "UPDATE tb_layanan SET layanan='$data[layanan]',keterangan='$data[keterangan]',icon='$data[icon]',status='$data[status]' WHERE id_layanan='$data[idlayanan]'";
+
+   if ($data['icon'] == null) {
+      $sqllayanan = "UPDATE tb_layanan SET layanan='$data[layanan]',keterangan='$data[keterangan]',link='$data[link]',status='$data[status]' WHERE id_layanan='$data[idlayanan]'";
+   } else {
+      $sqllayanan = "UPDATE tb_layanan SET layanan='$data[layanan]',keterangan='$data[keterangan]',link='$data[link]',icon='$data[icon]',status='$data[status]' WHERE id_layanan='$data[idlayanan]'";
+   }
+
 
    $updatelayanan = mysqli_query($konek, $sqllayanan) or die(mysqli_errno($konek));
 

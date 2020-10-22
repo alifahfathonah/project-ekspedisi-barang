@@ -22,7 +22,11 @@ if (!empty($email) or !empty($password)) {
             $_SESSION['Level']    = $dataUsers['level'];
             $_SESSION['LoginAt']  = $dataUsers['login_at'];
 
-            header("Location: index.php");
+            if ($dataUsers['level'] <> 'customer') {
+               header("Location: admin-cp/");
+            } else {
+               header("Location: index.php");
+            }
          } else {
             notif("Akun tidak aktif. Silakan hubungi admin", "warning");
             header("Location: ?page=login");

@@ -122,7 +122,6 @@ if (isset($_POST['update-barang'])) {
 
 
 
-
 if (isset($_GET['delete'])) {
     if ($_GET['delete'] == 'one') {
         $idBarang = $_GET['id'];
@@ -138,5 +137,23 @@ if (isset($_GET['delete'])) {
             notif("File di folder udah kehapus", "danger");
             header("Location: ?page=barang");
         }
+    }
+}
+
+if (isset($_POST['btn-deleteByChecklist'])) {
+    $dataBarang = $_POST['delete'];
+    foreach ($dataBarang as $idBarang) {
+        $dataBarang = getBarangById($idBarang);
+        $hapusFotodiFolder = unlink('../images/barang/' . $dataBarang['foto']);
+        if ($hapusFotodiFolder) {
+            $delete = deleteBarang($idBarang);
+        } else {
+            notif("File di folder udah kehapus", "danger");
+            header("Location: ?page=barang");
+        }
+    }
+    if ($delete) {
+        notif("Berhasil menghapus data barang", "success");
+        header("Location: ?page=barang");
     }
 }

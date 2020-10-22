@@ -7,6 +7,12 @@
             <input type="text" class="form-control" id="layanan" name="layanan">
          </div>
       </div>
+      <div class="col">
+         <div class="form-group">
+            <label for="link">Link</label>
+            <input type="text" class="form-control" id="link" name="link">
+         </div>
+      </div>
    </div>
 
    <div class="row">
