@@ -12,12 +12,15 @@
 
       <a href="?page=barang" class="list-group-item list-group-item-action <?= isset($_GET['page']) ? $_GET['page'] == 'barang' ? 'active' : '' : '' ?>">Barang</a>
 
+      <a href="?page=pengiriman" class="list-group-item list-group-item-action <?= isset($_GET['page']) ? $_GET['page'] == 'pengiriman' ? 'active' : '' : '' ?>">Pengiriman</a>
+
    <?php else : ?>
       <a href="?page=dashboard" class="list-group-item list-group-item-action <?= isset($_GET['page']) ? $_GET['page'] == 'dashboard' ? 'active' : '' : 'active' ?>">
          Dashboard
       </a>
 
-      <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Tracking</a>
+      <a href="?page=tracking" class="list-group-item list-group-item-action <?= isset($_GET['page']) ? $_GET['page'] == 'tracking' ? 'active' : '' : '' ?>">Tracking</a>
+
    <?php endif ?>
 
 </div>
