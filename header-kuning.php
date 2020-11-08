@@ -23,17 +23,17 @@
                       <a class="nav-link active" href="?page=home">Beranda <span class="sr-only">(current)</span></a>
                       <a class="nav-link" href="?page=layanan-kami">Layanan Kami</a>
                       <a class="nav-link" href="?page=contact">Contact Us</a>
+                      <a class="nav-link" href="?page=resi">Cek Resi</a>
                       <!-- //KONDISI SEBELUM DAN SESUDAH LOGIN -->
                       <?php
                         if (!isset($_SESSION['IdUser'])) {
                            echo '<a class="nav-link" href="?page=login">Login</a>';
                         } else {
-                           echo '<a class="nav-link" href="logout.php">Logout</a>';
+                           echo '<form action="logout.php" method="POST"><button type="submit" class="nav-link btn btn-outline-light">Logout</button></form>';
                         }
                         ?>
                    </div>
                 </div>
-             </div>
           </nav>
        </div>
     </div>

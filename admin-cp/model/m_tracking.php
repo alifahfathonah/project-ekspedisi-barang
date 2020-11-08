@@ -15,7 +15,7 @@ function getTrackingById($noResi)
    global $konek;
    $x = [];
    $sql = "SELECT * FROM tracking WHERE no_resi='$noResi' order by waktu desc";
-   $query = mysqli_query($konek, $sql);
+   $query = mysqli_query($konek, $sql) or die(mysqli_error($konek));
    while ($data = mysqli_fetch_assoc($query)) {
       $x[] = $data;
    }

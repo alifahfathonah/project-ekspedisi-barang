@@ -1,9 +1,13 @@
 <?php
-function getBarang()
+function getBarang($jenis = null)
 {
     global $konek;
     $x = [];
-    $sql = "SELECT * FROM tb_barang";
+    if ($jenis == null) {
+        $sql = "SELECT * FROM tb_barang";
+    } else {
+        $sql = "SELECT * FROM tb_barang where jenis_barang='$jenis'";
+    }
     $query = mysqli_query($konek, $sql);
     while ($data = mysqli_fetch_assoc($query)) {
         $x[] = $data;
