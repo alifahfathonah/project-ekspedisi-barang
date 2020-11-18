@@ -33,7 +33,6 @@ if ($_SESSION['Level'] == 'admin') {
          break;
 
       case 'barang':
-
          include 'view/barang.php';
          break;
       case 'add-barang':
@@ -41,6 +40,13 @@ if ($_SESSION['Level'] == 'admin') {
          break;
       case 'upd-barang':
          include 'view/upd-form/upd-barang.php';
+         break;
+
+      case 'pengiriman':
+         include 'view/pengiriman.php';
+         break;
+      case 'add-pengiriman':
+         include 'view/add-form/add-pengiriman.php';
          break;
 
 
@@ -60,6 +66,9 @@ if ($_SESSION['Level'] == 'admin') {
       case 'act-barang':
          include 'modul/act-barang.php';
          break;
+      case 'act-pengiriman':
+         include 'modul/act-pengiriman.php';
+         break;
 
       default:
          echo "HALAMAN TIDAK DITEMUKAN";
@@ -70,10 +79,19 @@ if ($_SESSION['Level'] == 'admin') {
       case 'dashboard':
          include 'view/dashboard.php';
          break;
+      case 'tracking':
+         include 'view/tracking.php';
+         break;
+      case 'upd-tracking':
+         include 'view/upd-form/upd-tracking.php';
+         break;
       case 'logout':
          include '../logout.php';
          break;
 
+      case 'act-tracking':
+         include 'modul/act-tracking.php';
+         break;
       default:
          echo "HALAMAN TIDAK DITEMUKAN";
          break;
