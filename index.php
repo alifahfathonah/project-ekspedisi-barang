@@ -3,6 +3,7 @@ session_start();
 require 'koneksi/koneksi.php';
 require 'koneksi/function.php';
 require 'admin-cp/model/m_layanan.php';
+require 'modul/m_infodanmenu.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,7 +26,7 @@ require 'admin-cp/model/m_layanan.php';
     <?php include 'content.php'; ?>
 
     <?php
-    if ($p == 'layanan-kami' or $p == 'yes' or $p == 'reg') {
+    if ($p == 'layanan-kami') {
         include 'footer-kuning.php';
     } else {
         include 'footer.php';

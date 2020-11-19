@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center ">
                     <div class="halaman-ulasan-rating">
-                        <p112 <input class="form-control" type="text" placeholder="Nama">
+                        <p112> <input class="form-control" type="text" placeholder="Nama">
                         </p112>
                         <p>
                             <input class="form-control" type="text" placeholder="Tuliskan Ulasan" style="width: 100%; height: 200px;">

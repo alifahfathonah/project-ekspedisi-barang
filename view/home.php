@@ -8,16 +8,15 @@
                    <div class="container">
                       <div class="row justify-content-between">
                          <div class="col-lg-5 a-banner">
-                            <h1>Kirim Barang Tanpa Khawatir </h1>
+                            <?php $banner = getMenu("Kirim Barang Tanpa Khawatir"); ?>
+                            <h1><?= $banner['judul'] ?> </h1>
                             <p>
-                               Apapun barang yang anda kirim jangan khawatir karena kami akan menjaga
-                               barang
-                               anda dengan baik dengan layanan cepat sampai aman & terpecaya
+                               <?= $banner['paragraf'] ?>
                             </p>
-                            <a href="./layanan-kami.html" <button class="btn btn-outline-light c-banner">Pilih Layanan</button></a>
+                            <a href="<?= $banner['link'] ?>" <button class="btn btn-outline-light c-banner">Pilih Layanan</button></a>
                          </div>
                          <div class="col-lg-5 d-banner">
-                            <img class="img-banner" src="./Assets/img/img-banner.png" alt="banner">
+                            <img class="img-banner" src="./images/menu/<?= $banner['gambar'] ?>" alt="banner">
                          </div>
                       </div>
                    </div>
@@ -26,16 +25,14 @@
                    <div class="container">
                       <div class="row justify-content-between">
                          <div class="col-lg-5">
-                            <h1>Kirim Barang Tanpa Khawatir</h1>
+                            <h1><?= $banner['judul'] ?> </h1>
                             <p>
-                               Apapun barang yang anda kirim jangan khawatir karena kami akan menjaga
-                               barang
-                               anda dengan baik dengan layanan cepat sampai aman & terpecaya
+                               <?= $banner['paragraf'] ?>
                             </p>
-                            <button type="button" class="btn btn-outline-light">Pilih Layanan</button>
+                            <a href="<?= $banner['link'] ?>" <button class="btn btn-outline-light c-banner">Pilih Layanan</button></a>
                          </div>
                          <div class="col-lg-5">
-                            <img class="img-banner" src="./Assets/img/img-banner.png" alt="banner">
+                            <img class="img-banner" src="./images/menu/<?= $banner['gambar'] ?>" alt="banner">
                          </div>
                       </div>
                    </div>
@@ -109,14 +106,14 @@
     <div class="container">
        <div class="row justify-content-between">
           <div class="col-lg-5 a-kerjasama">
-             <img class="img-work" src="./Assets/img/t-work.png" alt="">
+             <?php $kerjasama = getMenu("Kerjasama Secara Kekeluargaan"); ?>
+             <img class="img-work" src="./images/menu/<?= $kerjasama['gambar'] ?>" alt="">
           </div>
           <div class="col-lg-6 b-kerjasama">
-             <h1>Kerjasama Secara Kekeluargaan</h1>
-             <p>Syn Cepat Express berkomitmen menjadi partner terpercaya di seluruh Indonesia. Inilah 10 alasan
-                tepat untuk memilih Syn Cepat Express</p>
+             <h1><?= $kerjasama['judul'] ?></h1>
+             <p><?= $kerjasama['paragraf'] ?></p>
              <p>
-                <a href="./layanan-kami.html"> <button class="btn btn-warning">Pilih Layanan</button></a>
+                <a href="<?= $kerjasama['link'] ?>"> <button class="btn btn-warning">Pilih Layanan</button></a>
              </p>
           </div>
        </div>
@@ -130,15 +127,15 @@
     <div class="container">
        <div class="row justify-content-between">
           <div class="col-lg-6 a-kerjasama">
-             <h1>Kerjasama Secara Kekeluargaan</h1>
-             <p>Syn Cepat Express berkomitmen menjadi partner terpercaya di seluruh Indonesia. Inilah 10 alasan
-                tepat untuk memilih Syn Cepat Express</p>
+             <?php $timbangan = getMenu("Timbangan Akurat"); ?>
+             <h1><?= $timbangan['judul'] ?></h1>
+             <p><?= $timbangan['paragraf'] ?></p>
              <p>
-                <a href="./layanan-kami.html"> <button class="btn btn-warning">Pilih Layanan</button></a>
+                <a href="<?= $timbangan['link'] ?>"> <button class="btn btn-warning">Pilih Layanan</button></a>
              </p>
           </div>
           <div class="col-lg-5 b-kerjasama">
-             <img class="img-timbangan" src="./Assets/img/c-0.png" alt="">
+             <img class="img-timbangan" src="./images/menu/<?= $timbangan['gambar'] ?>" alt="">
           </div>
        </div>
     </div>
@@ -151,14 +148,14 @@
     <div class="container">
        <div class="row justify-content-between">
           <div class="col-lg-5">
-             <img class="img-pengiriman a-kerjasama" src="./Assets/img/c-2.png" alt="">
+             <?php $pengiriman = getMenu("Pengiriman Lebih Cepat"); ?>
+             <img class="img-pengiriman a-kerjasama" src="./images/menu/<?= $pengiriman['gambar'] ?>" alt="">
           </div>
           <div class="col-lg-6 b-kerjasama">
-             <h1>Kerjasama Secara Kekeluargaan</h1>
-             <p>Syn Cepat Express berkomitmen menjadi partner terpercaya di seluruh Indonesia. Inilah 10 alasan
-                tepat untuk memilih Syn Cepat Express</p>
+             <h1><?= $pengiriman['judul'] ?></h1>
+             <p><?= $pengiriman['paragraf'] ?></p>
              <p>
-                <a href="./layanan-kami.html"> <button class="btn btn-warning">Pilih Layanan</button></a>
+                <a href="<?= $pengiriman['link'] ?>"> <button class="btn btn-warning">Pilih Layanan</button></a>
              </p>
           </div>
        </div>
@@ -172,15 +169,15 @@
     <div class="container">
        <div class="row justify-content-between">
           <div class="col-lg-6 a-kerjasama">
-             <h1>Kerjasama Secara Kekeluargaan</h1>
-             <p>Syn Cepat Express berkomitmen menjadi partner terpercaya di seluruh Indonesia. Inilah 10 alasan
-                tepat untuk memilih Syn Cepat Express</p>
+             <?php $pick = getMenu("Pickup Delivery"); ?>
+             <h1><?= $pick['judul'] ?></h1>
+             <p><?= $pick['paragraf'] ?></p>
              <p>
-                <a href="./layanan-kami.html"> <button class="btn btn-warning">Pilih Layanan</button></a>
+                <a href="<?= $pick['link'] ?>"> <button class="btn btn-warning">Pilih Layanan</button></a>
              </p>
           </div>
           <div class="col-lg-5 b-kerjasama">
-             <img class="img-pick-up" src="./Assets/img/c-1.png" alt="">
+             <img class="img-pick-up" src="./images/menu/<?= $pick['gambar'] ?>" alt="">
           </div>
        </div>
     </div>
@@ -193,9 +190,10 @@
     <div class="container">
        <div class="row">
           <div class="col-lg-8 text-ekspedisi a-kerjasama">
-             <h1>Pilih ekspedisi berkualitas dengan layanan terpercaya</h1>
+             <?php $ekpedisi = getMenu("Pilih ekspedisi berkualitas dengan layanan terpercaya"); ?>
+             <h1><?= $ekpedisi['judul'] ?></h1>
              <hr style="border-color:rgb(215, 204, 204); border-width: 1px; ">
-             <a href="./layanan-kami.html"> <button class="btn btn-outline-warning">Pilih Layanan</button></a>
+             <a href="<?= $ekpedisi['link'] ?>"> <button class="btn btn-outline-warning">Pilih Layanan</button></a>
           </div>
        </div>
     </div>
@@ -226,7 +224,7 @@
              </p>
              <hr style="border: 1px solid rgba(139, 129, 129, 0.637);">
              <p>
-                <a href="./Ulasan-Rating.html"> <button class="btn btn-warning">Berikan Ulasan Anda</button></a>
+                <a href="?page=ulasan-rating"> <button class="btn btn-warning">Berikan Ulasan Anda</button></a>
              </p>
           </div>
           <div class="col-lg-3">

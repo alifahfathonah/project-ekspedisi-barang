@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2020 at 10:49 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Nov 19, 2020 at 10:08 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `pengiriman` (
   `no_resi` varchar(16) NOT NULL,
   `harga` float DEFAULT NULL,
-  `asal` text,
-  `tujuan` text,
+  `asal` text DEFAULT NULL,
+  `tujuan` text DEFAULT NULL,
   `id_layanan` int(5) DEFAULT NULL,
   `id_barang` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -56,7 +55,7 @@ CREATE TABLE `profil` (
   `nama_depan` varchar(200) DEFAULT NULL,
   `nama_belakang` varchar(200) DEFAULT NULL,
   `jk` enum('Pria','Wanita') NOT NULL DEFAULT 'Pria',
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `kontak` varchar(20) DEFAULT NULL,
   `id_user` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,6 +94,29 @@ INSERT INTO `tb_barang` (`id_barang`, `nama_barang`, `jenis_barang`, `berat`, `f
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_info`
+--
+
+CREATE TABLE `tb_info` (
+  `id_info` int(11) NOT NULL,
+  `logo` varchar(200) DEFAULT NULL,
+  `visi` text DEFAULT NULL,
+  `alamat` text DEFAULT NULL,
+  `kontak` varchar(20) DEFAULT NULL,
+  `email` varchar(40) DEFAULT NULL,
+  `copyright` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_info`
+--
+
+INSERT INTO `tb_info` (`id_info`, `logo`, `visi`, `alamat`, `kontak`, `email`, `copyright`) VALUES
+(1, 'logo syn cepat.png', 'Apapun barang yang anda kirim jangan khawatir karena kami akan menjaga barang anda dengan baik dengan layanan cepat sampai aman & terpecaya', 'KANTOR PUSAT Jl. Rajawali No. 11 Ilir Timur 11440 Indonesia', '081192921928', 'office@sydemy.com', 'Copyright © 2020 - Syn-Cepat-express , All Right Reserved');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_layanan`
 --
 
@@ -118,12 +140,38 @@ INSERT INTO `tb_layanan` (`id_layanan`, `layanan`, `keterangan`, `link`, `icon`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_menu`
+--
+
+CREATE TABLE `tb_menu` (
+  `idmenu` int(11) NOT NULL,
+  `judul` text DEFAULT NULL,
+  `paragraf` text DEFAULT NULL,
+  `link` varchar(50) DEFAULT NULL,
+  `gambar` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_menu`
+--
+
+INSERT INTO `tb_menu` (`idmenu`, `judul`, `paragraf`, `link`, `gambar`) VALUES
+(1, 'Kirim Barang Tanpa Khawatir', 'Apapun barang yang anda kirim jangan khawatir karena kami akan menjaga barang anda dengan baik dengan layanan cepat sampai aman & terpecaya', '?page=layanan-kami', 'img-banner.png'),
+(2, 'Kerjasama Secara Kekeluargaan', 'Syn Cepat Express berkomitmen menjadi partner terpercaya di seluruh Indonesia. Inilah 10 alasan tepat untuk memilih Syn Cepat Express', '?page=layanan-kami', 't-work.png'),
+(3, 'Timbangan Akurat', 'Berat lebih akurat dengan timbangan digital', '?page=layanan-kami', 'c-0.png'),
+(4, 'Pengiriman Lebih Cepat', 'Layanan Pengiriman reguler dalam waktu 1-2 hari', '?page=layanan-kami', 'c-2.png'),
+(5, 'Pickup Delivery', 'Minimal 5 Paket Atau Setara dengan 5 kg, kami ambil ditempat anda (waktu flexibel & gratis)', '?page=layanan-kami', 'c-1.png'),
+(6, 'Pilih ekspedisi berkualitas dengan layanan terpercaya', NULL, '?page=layanan-kami', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tracking`
 --
 
 CREATE TABLE `tracking` (
   `id_tracking` int(11) NOT NULL,
-  `posisi` text,
+  `posisi` text DEFAULT NULL,
   `waktu` datetime DEFAULT NULL,
   `no_resi` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -198,10 +246,22 @@ ALTER TABLE `tb_barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
+-- Indexes for table `tb_info`
+--
+ALTER TABLE `tb_info`
+  ADD PRIMARY KEY (`id_info`);
+
+--
 -- Indexes for table `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
   ADD PRIMARY KEY (`id_layanan`);
+
+--
+-- Indexes for table `tb_menu`
+--
+ALTER TABLE `tb_menu`
+  ADD PRIMARY KEY (`idmenu`);
 
 --
 -- Indexes for table `tracking`
@@ -233,10 +293,22 @@ ALTER TABLE `tb_barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `tb_info`
+--
+ALTER TABLE `tb_info`
+  MODIFY `id_info` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
   MODIFY `id_layanan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tb_menu`
+--
+ALTER TABLE `tb_menu`
+  MODIFY `idmenu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tracking`

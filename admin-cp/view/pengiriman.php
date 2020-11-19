@@ -26,7 +26,7 @@
                <td><?= $data['nama_barang'] ?></td>
                <td><?= $data['jenis_barang'] ?></td>
                <td><?= $data['berat'] ?></td>
-               <td><?= $data['foto'] ?></td>
+               <td><img src="../images/barang/<?= $data['foto'] ?>" height="30px" width="auto" alt=""></td>
                <td>
                   <a href="?page=upd-barang&id=<?= $data['id_barang'] ?>" class="btn btn-sm btn-info">Edit
                   </a>

@@ -21,7 +21,7 @@
          <th><?= $no++ ?></th>
          <td><?= $data['layanan'] ?></td>
          <td><?= $data['keterangan'] ?></td>
-         <td><?= $data['icon'] ?></td>
+         <td><img src="../images/layanan/<?= $data['icon'] ?>" height="50px" width="auto" alt=""></td>
          <td><?= $data['status'] ?></td>
          <td>
             <a href="?page=upd-layanan&id=<?= $data['id_layanan'] ?>" class="btn btn-sm btn-info">Edit</a>

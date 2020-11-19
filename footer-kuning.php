@@ -3,12 +3,14 @@
      <div class="container">
         <div class="row">
            <div class="col-lg-5">
-              <img src="./Assets/logo/logo syn cepat.png" alt="">
+              <?php
+               $data = getInfo();
+               ?>
+              <img src="images/info/<?= $data['logo'] ?>" alt="">
               <br>
               <br>
               <p>
-                 Apapun barang yang anda kirim jangan khawatir karena kami akan menjaga barang anda dengan baik
-                 dengan layanan cepat sampai aman & terpecaya
+                 <?= $data['visi'] ?>
               </p>
            </div>
            <div class="col-lg-3">
@@ -16,22 +18,26 @@
               <p>
                  Layanan Kami
               </p>
-              <p>
-                 YES (Yakin Esok Sampai
-              </p>
-              <p>
-                 REG (Reguler)
-              </p>
+              <?php
+               $layanan = getLayanan();
+               $no = 1;
+               foreach ($layanan as $data_layanan) : ?>
+                 <p>
+                    <?= $data_layanan['layanan'] ?>
+                 </p>
+              <?php endforeach ?>
+              <!-- <p>
+                REG (Reguler)
+             </p> -->
            </div>
            <div class="col-lg-3">
-              <h1>KANTOR PUSAT
-                 Jl. Rajawali No. 11 Ilir Timur 11440 Indonesia</h1>
+              <h1> <?= $data['alamat'] ?></h1>
            </div>
         </div>
         <hr style="border-color: wheat;">
         <div class="row">
            <p>
-              Copyright &copy; 2020 - Syn-Cepat-express , All Right Reserved
+              <?= $data['copyright'] ?>
            </p>
         </div>
      </div>
